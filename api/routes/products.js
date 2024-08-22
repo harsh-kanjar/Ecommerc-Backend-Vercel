@@ -9,14 +9,13 @@ const Cart = require('../../models/Cart')
 // Route 1: Get all the products using: GET /api/v1/product/getallproducts       --User Api -- no login required
 router.get('/getallproducts', async (req, res) => {
     try {
-        const productList = await Products.find()
-        res.send(productList)
-
+        const productList = await Products.find();
+        res.json(productList); // Explicitly sending JSON response
     } catch (error) {
-        console.error(error.message);
-        res.status(500).send('Internal server error');
+        console.error('Error fetching products:', error.message);
+        res.status(500).json({ error: 'Internal server error' }); // Sending JSON error response
     }
-})
+});
 
 // Route 2:
 router.get('/getproduct/:id', async (req, res) => {
