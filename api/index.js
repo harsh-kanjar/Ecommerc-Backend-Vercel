@@ -17,8 +17,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/example', express.static(path.join(__dirname, '../example')));
 // --------------------------------------------
-
+app.get("/", (req, res) => res.send("Express on Vercel"));
 //---------------AVAILABLE ROUTES--------------
+ 
 app.use('/api/v1/auth', require('./routes/auth.js'));
 app.use('/api/v1/product', require('./routes/products.js'));
 
