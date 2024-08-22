@@ -10,7 +10,15 @@ connectToMongo();
 // -------------------------EXPRESS SERVER------------------------------
 const app = express();
 const port = 5000;
-app.use(cors());
+
+const corsOptions = {
+    origin: 'http://localhost:5173', // Allow requests from this origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Allow cookies to be sent
+    optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
 
 // -------------NECESSARY TO USE req.body (Middleware)------
 app.use(express.json());

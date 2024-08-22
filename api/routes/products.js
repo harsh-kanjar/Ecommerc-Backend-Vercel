@@ -10,7 +10,7 @@ const Cart = require('../../models/Cart')
 router.get('/getallproducts', async (req, res) => {
     try {
         const productList = await Products.find();
-        res.json(productList); // Explicitly sending JSON response
+        res.json(productList);
     } catch (error) {
         console.error('Error fetching products:', error.message);
         res.status(500).json({ error: 'Internal server error' }); // Sending JSON error response
