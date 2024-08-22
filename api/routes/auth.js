@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router();
-const User = require('../models/User') //Model
+const User = require('../../models/User') //Model
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const jwt_s = "imharshkanjar@127.0.0.1/#";
-const fetchuser = require('../middleware/fetchuser');
+const fetchuser = require('../../middleware/fetchuser');
 
 // Route 1: Create a user using POST: "/api/auth/createuser" . No login required 
 // router.post takes 3 arguments 1. path | 2. array of validations | 3. callback -> router.post('/' , [] , ()=>{})

@@ -1,13 +1,14 @@
 {
   "name": "ecommerce-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "E-commerce backend server",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./api/index.js",
+    "start": "node ./api/index.js",
+    "dev": "nodemon ./api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Your Name",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -20,7 +21,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.19",
     "morgan": "^1.10.0",
-    "multer": "^1.4.2",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.6"
   }
 }
